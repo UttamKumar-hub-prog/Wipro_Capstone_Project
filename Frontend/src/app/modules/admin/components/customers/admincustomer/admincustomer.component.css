@@ -1,0 +1,98 @@
+/* =========================
+   Glassmorphism Card
+========================= */
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  color: #fff; /* White text inside card */
+  transition: all 0.3s ease;
+}
+
+/* =========================
+   Glass Buttons
+========================= */
+.btn-glow {
+  background: rgba(255, 255, 255, 0.2);
+  color: #000000; /* White text */
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.4);
+  border-radius: 12px;
+}
+.btn-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(25, 72, 122, 0.6);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* =========================
+   Glass Table
+========================= */
+.table-glass th,
+.table-glass td {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #000000 !important; /* White text visible */
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.table-glass th {
+  font-weight: 600;
+  color: #ffffff !important; /* White header text */
+}
+
+.table-glass tr:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* =========================
+   Input Fields & Labels
+========================= */
+.mat-form-field .mat-input-element {
+  color: #fff !important; /* Input text white */
+}
+
+.mat-form-field .mat-form-field-label {
+  color: #e0e0e0 !important; /* Label visible */
+}
+
+.mat-form-field .mat-placeholder {
+  color: #e0e0e0 !important; /* Placeholder visible */
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: #00ffff !important; /* Highlight label on focus */
+}
+
+.mat-form-field .mat-input-element::placeholder {
+  color: #ccc !important; /* Placeholder text */
+  opacity: 1;
+}
+
+/* =========================
+   Body Background
+========================= */
+body {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  min-height: 100vh;
+  padding: 2rem 0;
+  color: #fff; /* Default text color */
+}
+
+/* =========================
+   Responsive Adjustments
+========================= */
+@media (max-width: 768px) {
+  .mat-form-field.flex-grow-1.ms-2 {
+    margin-left: 0 !important;
+    margin-top: 0.5rem;
+  }
+}

@@ -1,0 +1,120 @@
+/* Full Page Container with Background Image */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  /* Background Image + dark overlay */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+              url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80')
+              no-repeat center center/cover;
+
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Signup Card (Glassmorphism Style) */
+.signup-card {
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  border-radius: 18px;
+
+  /* Glass effect */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease-in-out;
+}
+
+.signup-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Title */
+.signup-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+/* Form Fields */
+.full-width {
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+/* Input Error Highlighting */
+mat-form-field.ng-invalid.ng-touched .mat-input-element {
+  border-bottom: 2px solid #e53935 !important;
+}
+
+mat-form-field.ng-invalid.ng-touched .mat-form-field-outline {
+  stroke: #e53935 !important;
+}
+
+mat-error {
+  font-size: 0.85rem;
+  color: #e53935;
+  font-weight: 500;
+}
+
+/* Valid Input Highlight */
+mat-form-field.ng-valid.ng-touched .mat-input-element {
+  border-bottom: 2px solid #43a047 !important;
+}
+
+mat-form-field.ng-valid.ng-touched .mat-form-field-outline {
+  stroke: #43a047 !important;
+}
+
+/* Signup Button */
+.signup-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: #0072ff !important;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.signup-btn:hover {
+  background: #0057cc !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .signup-card {
+    max-width: 90%;
+    padding: 20px;
+  }
+  .signup-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-container {
+    padding: 10px;
+  }
+  .signup-card {
+    padding: 15px;
+  }
+  .signup-title {
+    font-size: 1.3rem;
+  }
+  .signup-btn {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}

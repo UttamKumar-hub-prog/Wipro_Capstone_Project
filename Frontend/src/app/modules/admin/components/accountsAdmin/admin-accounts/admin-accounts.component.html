@@ -1,0 +1,84 @@
+<div class="container">
+  <!-- Page Title -->
+  <h2 class="page-title">All Bank Accounts</h2>
+
+  <!-- Scrollable Table -->
+  <div class="table-responsive">
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>PAN</th>
+          <th>Aadhaar</th>
+          <th>Account No</th>
+          <th>Bank Type</th>
+          <th>Balance</th>
+          <th>Loan</th>
+          <th>Address</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let acc of accounts">
+          <td>{{ acc.id }}</td>
+          <td>{{ acc.username }}</td>
+          <td>{{ acc.pan }}</td>
+          <td>{{ acc.aadhaar }}</td>
+          <td>{{ acc.accNo }}</td>
+          <td>{{ acc.bankType }}</td>
+          <td>{{ acc.balance | currency:'INR' }}</td>
+          <td>{{ acc.loan | currency:'INR' }}</td>
+          <td>{{ acc.address }}</td>
+          <td>
+            <button class="btn-edit" (click)="select(acc)">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Account Form -->
+  <div *ngIf="selected" class="form-container">
+    <h3>{{ selected!.id ? 'Edit Account' : 'New Account' }}</h3>
+    <form (ngSubmit)="save()" class="account-form" novalidate>
+      <div class="form-group">
+        <label for="username">Name</label>
+        <input [(ngModel)]="selected!.username" name="username" id="username" placeholder="Enter full name" required>
+      </div>
+      <div class="form-group">
+        <label for="pan">PAN</label>
+        <input [(ngModel)]="selected!.pan" name="pan" id="pan" placeholder="Enter PAN" required>
+      </div>
+      <div class="form-group">
+        <label for="aadhaar">Aadhaar</label>
+        <input [(ngModel)]="selected!.aadhaar" name="aadhaar" id="aadhaar" placeholder="Enter Aadhaar number" required>
+      </div>
+      <div class="form-group">
+        <label for="accNo">Account No</label>
+        <input [(ngModel)]="selected!.accNo" name="accNo" id="accNo" placeholder="Enter account number" required>
+      </div>
+      <div class="form-group">
+        <label for="bankType">Bank Type</label>
+        <input [(ngModel)]="selected!.bankType" name="bankType" id="bankType" placeholder="Enter bank type" required>
+      </div>
+      <div class="form-group">
+        <label for="balance">Balance</label>
+        <input [(ngModel)]="selected!.balance" name="balance" id="balance" type="number" placeholder="Enter balance" required>
+      </div>
+      <div class="form-group">
+        <label for="loan">Loan</label>
+        <input [(ngModel)]="selected!.loan" name="loan" id="loan" type="number" placeholder="Enter loan amount">
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input [(ngModel)]="selected!.address" name="address" id="address" placeholder="Enter address" required>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-save">Save</button>
+        <button type="button" class="btn-cancel" (click)="selected = undefined">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

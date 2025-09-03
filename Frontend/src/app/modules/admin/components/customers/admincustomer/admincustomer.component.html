@@ -1,0 +1,108 @@
+<div class="container mt-4">
+  <div class="card shadow-lg p-4 glass-card">
+    <h3 class="text-center text-primary mb-4">👥 Customers</h3>
+
+    <!-- Actions -->
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="toggleCreate()"
+        class="btn-glow"
+      >
+        ➕ New
+      </button>
+
+      <mat-form-field class="flex-grow-1 ms-2" appearance="outline">
+        <mat-label>Filter</mat-label>
+        <input
+          matInput
+          (input)="applyFilter($event)"
+          placeholder="name / email / phone"
+        />
+      </mat-form-field>
+    </div>
+
+    <!-- Table -->
+    <div class="table-responsive">
+      <table
+        mat-table
+        [dataSource]="filtered"
+        class="mat-elevation-z2 table table-striped table-hover table-glass"
+      >
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let r">{{ r.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef>Email</th>
+          <td mat-cell *matCellDef="let r">{{ r.email }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="phone">
+          <th mat-header-cell *matHeaderCellDef>Phone</th>
+          <td mat-cell *matCellDef="let r">{{ r.phone }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="aadhaar">
+          <th mat-header-cell *matHeaderCellDef>Aadhaar</th>
+          <td mat-cell *matCellDef="let r">{{ r.aadhaar | maskAadhaar }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="pan">
+          <th mat-header-cell *matHeaderCellDef>PAN</th>
+          <td mat-cell *matCellDef="let r">{{ r.pan | maskPan }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayed"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayed"></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Create Form -->
+  <section *ngIf="creating" class="mt-4">
+    <div class="card shadow-lg p-4 glass-card">
+      <h4 class="text-success mb-3">📝 Create Customer</h4>
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="row g-3">
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Name</mat-label>
+              <input matInput formControlName="name" />
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" />
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Phone</mat-label>
+              <input matInput formControlName="phone" />
+            </mat-form-field>
+          </div>
+          <div class="col-12">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Address</mat-label>
+              <input matInput formControlName="address" />
+            </mat-form-field>
+          </div>
+          <div class="col-12 text-end">
+            <button
+              mat-raised-button
+              color="primary"
+              [disabled]="form.invalid"
+              class="btn-glow"
+            >
+              💾 Save
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,17 @@
+<!-- app-admin-nav.component.html -->
+<mat-toolbar color="accent">
+  <button mat-icon-button aria-label="Menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span class="ms-2">Bank Portal - Admin</span>
+  <span class="example-spacer"></span>
+
+  <button mat-button routerLink="/admin/dashboard">Dashboard</button>
+  <button mat-button routerLink="/admin/accounts">Accounts</button>
+  <button mat-button routerLink="/admin/customers">Customers</button>
+  <button mat-button routerLink="/admin/feedbacks">Feedbacks</button>
+  <button mat-button routerLink="/admin/auditlogs">Audit Logs</button>
+
+  <button mat-button (click)="logout()">Logout</button>
+</mat-toolbar>

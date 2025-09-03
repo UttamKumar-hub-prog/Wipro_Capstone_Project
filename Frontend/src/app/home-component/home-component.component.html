@@ -1,0 +1,64 @@
+<!-- Welcome Section -->
+<div class="welcome-section text-center my-5" *ngIf="!isUserLoggedIn && !isAdminLoggedIn">
+  <div class="card shadow-lg border-0 rounded-4">
+    <div class="card-body p-5">
+     <img src="https://static.vecteezy.com/system/resources/previews/000/290/986/original/bank-vector-icon.jpg" 
+           alt="User" width="30" class="me-2 rounded-circle shadow-sm"> 
+      <h2 class="card-title fw-bold text-primary">Welcome to Bank Portal</h2>
+      <p class="text-muted">Manage your accounts, payments, and customers easily</p>
+      <div class="mt-4">
+        <a class="btn btn-primary btn-lg mx-2 shadow" routerLink="/signup">
+          <i class="bi bi-person-plus"></i> Sign Up
+        </a>
+        <a class="btn btn-secondary btn-lg mx-2 shadow" routerLink="/login">
+          <i class="bi bi-box-arrow-in-right"></i> Login
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- User Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background:  darkgrey;" *ngIf="isUserLoggedIn">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" routerLink="/user/user-dashboard">
+      <img src="https://static.vecteezy.com/system/resources/previews/000/290/986/original/bank-vector-icon.jpg" 
+           alt="User" width="30" class="me-2 rounded-circle shadow-sm">  Bank Portal - Customer
+    </a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" routerLink="/user/user-dashboard"><i class="bi bi-house-door"></i> Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/user/user-account"><i class="bi bi-wallet2"></i> Account</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/user/user-customer"><i class="bi bi-people"></i> Customer</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/user/user-payment"><i class="bi bi-credit-card"></i> Payment</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/user/user-feedback"><i class="bi bi-chat-dots"></i> Feedback</a></li>
+      </ul>
+      <button class="btn btn-outline-light shadow-sm" (click)="logout()"><i class="bi bi-box-arrow-right"></i> Logout</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Admin Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm" *ngIf="isAdminLoggedIn">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" routerLink="/admin/dashboard">
+      <img src="https://static.vecteezy.com/system/resources/previews/000/290/986/original/bank-vector-icon.jpg" 
+           alt="User" width="30" class="me-2 rounded-circle shadow-sm">  Bank Portal (Admin)
+    </a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" routerLink="/admin/dashboard"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/admin/accounts"><i class="bi bi-wallet2"></i> Accounts</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/admin/customers"><i class="bi bi-people-fill"></i> Customers</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/admin/feedbacks"><i class="bi bi-chat-left-text"></i> Feedbacks</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/admin/auditlogs"><i class="bi bi-file-earmark-text"></i> Audit Logs</a></li>
+      </ul>
+      <button class="btn btn-outline-light shadow-sm" (click)="logout()"><i class="bi bi-box-arrow-right"></i> Logout</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mt-4">
+  <router-outlet></router-outlet>
+</div>

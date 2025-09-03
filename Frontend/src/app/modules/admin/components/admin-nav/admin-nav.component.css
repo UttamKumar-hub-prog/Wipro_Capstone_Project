@@ -1,0 +1,88 @@
+/* Toolbar Styling */
+mat-toolbar {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #0D47A1, #009688); /* Dark blue to teal */
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Title */
+.toolbar-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+/* Spacer */
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+/* Desktop nav */
+.desktop-nav button {
+  margin: 0 0.25rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  color: #ffffff;
+}
+
+.desktop-nav button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+/* Icon button */
+.menu-button {
+  display: none; /* hide on desktop */
+}
+
+mat-icon {
+  font-size: 28px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  color: #ffffff;
+}
+
+mat-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Mobile Sidenav */
+.sidenav-container {
+  height: calc(100vh - 64px); /* adjust if toolbar height changes */
+}
+
+.mobile-sidenav {
+  width: 220px;
+  background: #0D47A1; /* Dark blue for side menu */
+  color: #ffffff;
+}
+
+.mobile-nav button {
+  display: block;
+  width: 100%;
+  margin: 0.25rem 0;
+  color: #ffffff;
+  text-align: left;
+}
+
+.mobile-nav button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Responsive Breakpoint */
+@media screen and (max-width: 768px) {
+  .desktop-nav {
+    display: none; /* hide desktop nav */
+  }
+
+  .menu-button {
+    display: inline-flex; /* show menu icon */
+  }
+}

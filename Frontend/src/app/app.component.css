@@ -1,0 +1,41 @@
+/* Header styling */
+.app-header {
+  text-align: center;
+  background: linear-gradient(90deg, #1976d2, #64b5f6);
+  color: white;
+  padding: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+ 
+}
+
+/* Footer styling */
+.app-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #1976d2;
+  color: white;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Router-outlet container styling */
+.router-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.2); /* semi-transparent glass effect */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  min-height: 60vh;
+  transition: all 0.3s ease;
+}
+
+/* Optional hover effect */
+.router-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}

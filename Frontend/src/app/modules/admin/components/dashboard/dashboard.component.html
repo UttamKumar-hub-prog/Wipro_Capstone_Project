@@ -1,0 +1,21 @@
+<!-- admin-layout.component.html -->
+
+<!-- Admin Navigation -->
+<app-admin-nav></app-admin-nav>
+
+<!-- Main Content Area -->
+<div class="container mt-4">
+  <div class="glass-container p-4 shadow-sm rounded text-center">
+    
+    <!-- Dashboard Image -->
+    <img 
+      src="/src/assets/t.jpg" 
+      alt="Banking Dashboard" 
+      class="img-fluid rounded mb-4" 
+      style="max-height: 200px; object-fit: cover;"
+    />
+
+    <!-- Routed child content -->
+    <router-outlet></router-outlet>
+  </div>
+</div>

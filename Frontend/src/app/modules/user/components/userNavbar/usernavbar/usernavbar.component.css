@@ -1,0 +1,18 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.navbar-noauth mat-toolbar 
+{
+    background-color:#03045e;
+}
+.navbar-noauth mat-toolbar button {
+  color: white !important;
+}
+.navbar-noauth mat-toolbar span {
+  color: white !important;
+}
+
+
+.navbar-noauth mat-toolbar mat-icon {
+  color: white !important;
+}

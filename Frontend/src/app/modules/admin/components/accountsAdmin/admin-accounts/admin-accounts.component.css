@@ -1,0 +1,273 @@
+/* ===========================
+   Background
+=========================== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f8; /* light professional gray */
+}
+
+/* ===========================
+   Container (Glass style)
+=========================== */
+.container {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+/* ===========================
+   Page Title
+=========================== */
+.page-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #2c3e50; /* dark professional blue-gray */
+  
+  position: relative;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ===========================
+   Table
+=========================== */
+.styled-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  color: #2c3e50;
+}
+
+.styled-table thead tr {
+  background-color: #34495e; /* dark professional header */
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+}
+
+.styled-table th, 
+.styled-table td {
+  padding: 0.8rem 0.5rem;
+  text-align: center;
+}
+
+.styled-table tbody tr {
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.styled-table tbody tr:hover {
+  background-color: #ecf0f1; /* light hover */
+  transform: scale(1.02);
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f7f9fa;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+button {
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  color: #fff;
+}
+
+.btn-edit {
+  background-color: #3498db; /* professional blue */
+}
+
+.btn-edit:hover {
+  background-color: #2980b9;
+}
+
+.btn-save {
+  background-color: #27ae60; /* professional green */
+}
+
+.btn-save:hover {
+  background-color: #1e8449;
+}
+
+.btn-cancel {
+  background-color: #c0392b; /* professional red */
+}
+
+.btn-cancel:hover {
+  background-color: #922b21;
+}
+
+/* ===========================
+   Form
+=========================== */
+.form-container {
+  margin-top: 2rem;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.account-form input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 1rem;
+  color: #2c3e50;
+  background-color: #fff;
+}
+
+.account-form input::placeholder {
+  color: #7f8c8d;
+}
+
+/* Form buttons */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+@media (max-width: 1024px) {
+  .styled-table thead {
+    display: none;
+  }
+
+  .styled-table, 
+  .styled-table tbody, 
+  .styled-table tr, 
+  .styled-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .styled-table tr {
+    margin-bottom: 1rem;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  .styled-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+  }
+
+  .styled-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    width: 45%;
+    font-weight: 600;
+    text-align: left;
+    color: #34495e;
+  }
+}
+/* ===========================
+   Table
+=========================== */
+ 
+.styled-table th {
+  padding: 0.8rem 0.5rem;
+  border-bottom: 2px solid #bdc3c7;
+}
+
+ 
+/* Alternate row colors */
+.styled-table tbody tr:nth-of-type(odd) {
+  background-color: #f7f9fa; /* light gray */
+}
+
+ 
+ 
+
+/* Table cells */
+.styled-table td {
+  padding: 0.8rem 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+/* Form container */
+.form-container {
+  margin-top: 2rem;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Form groups */
+.account-form .form-group {
+  margin-bottom: 1rem;
+}
+
+/* Alternating input background colors */
+.account-form .form-group:nth-of-type(odd) input {
+  background-color: #f7f9fa; /* light gray */
+}
+
+.account-form .form-group:nth-of-type(even) input {
+  background-color: #ffffff; /* white */
+}
+
+/* Input common style */
+ 
+
+/* Form labels */
+.account-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #34495e;
+}
+/* Page Title */
+.page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50; /* dark professional blue-gray */
+  margin-bottom: 2rem;
+  position: relative;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Optional underline decoration */
+.page-title::after {
+  content: "";
+  display: block;
+  width: 80px; /* underline length */
+  height: 3px; /* thickness */
+  background: #3498db; /* professional blue */
+  margin: 0.5rem auto 0; /* spacing below text */
+  border-radius: 2px;
+}
+
+/* Subtle shadow for depth */
+.page-title {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
