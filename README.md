@@ -46,7 +46,7 @@ The system follows a **Microservices Architecture**:
 3. **JWT authentication** ensures secure transactions.  
 4. **Kafka events** are used for asynchronous notifications.  
 5. **Audit logs** are stored for compliance and security.  
-
+![alt text](architecture.png)
 ---
 
 ## 📂 Tech Stack
