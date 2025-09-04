@@ -1,6 +1,6 @@
-# 🏦 Banking Web Application (Capstone Project)
+# 🏦 Banking Management System (Capstone Project)
 
-This project is a **Banking Web Application** designed using **Angular** for the frontend and **Spring Boot Microservices** for the backend. It demonstrates a **modern enterprise-level architecture** with features like customer management, accounts, payments, notifications, auditing, and feedback.  
+This project is a **Banking Management System** designed using **Angular** for the frontend and **Spring Boot Microservices** for the backend. It demonstrates a **modern enterprise-level architecture** with features like customer management, accounts, payments, notifications, auditing, and feedback.  
 
 ---
 
